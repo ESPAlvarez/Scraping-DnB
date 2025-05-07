@@ -1,0 +1,44 @@
+# Virtual environments
+venv/
+.venv/
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Pytest and coverage
+.pytest_cache/
+.coverage
+coverage.xml
+nosetests.xml
+htmlcov/
+.tox/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+dnb_scraper.egg-info/
+
+# Scraper data and progress
+data/
+output/
+progress.json
+*.json
+*.csv
+*.log
+logs/
+*.tmp
