@@ -33,12 +33,16 @@ dist/
 *.egg
 dnb_scraper.egg-info/
 
-# Scraper data and progress
+# Scraper data and runtime output
+logs/
+reports/
 data/
 output/
 progress.json
-*.json
-*.csv
 *.log
-logs/
 *.tmp
+*.csv
+*.json
+
+# App folder with antiguos scripts
+app/
