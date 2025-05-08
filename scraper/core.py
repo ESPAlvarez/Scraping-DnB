@@ -104,7 +104,9 @@ def scrape_country(country: str, reset: bool = False):
         finally:
             drv0.quit()
 
-        verticals = [v if v.startswith("http") else BASE_URL + v for v in verticals] or [full_base]
+        verticals = [
+            v if v.startswith("http") else BASE_URL + v for v in verticals
+        ] or [full_base]
         errores = False
 
         # loop verticales → páginas
@@ -149,7 +151,9 @@ def scrape_country(country: str, reset: bool = False):
                         if page == start_page:
                             first_sig = {c["company_link"] for c in comps}
                         # si repite la firma, cortamos
-                        elif first_sig is not None and {c["company_link"] for c in comps} == first_sig:
+                        elif first_sig is not None and {
+                            c["company_link"] for c in comps
+                        } == first_sig:
                             new_end = max(page - 1, start_page)
                             entry_cfg.update({"end_page": new_end, "current_page": new_end + 1})
                             save_json(cfg_path, config)
@@ -187,7 +191,9 @@ def scrape_country(country: str, reset: bool = False):
                 page = get_next_page(entry_cfg)
 
         # si no hubo errores y todo paginado terminó:
-        if not errores and all(get_next_page(config["enlaces"].get(v, {})) is None for v in verticals):
+        if not errores and all(get_next_page(
+            config["enlaces"].get(v, {})
+        ) is None for v in verticals):
             config["base_links_completados"].append(base_link)
             save_json(cfg_path, config)
             logger.info(f"[{country}] base_link completado: {base_link}")
