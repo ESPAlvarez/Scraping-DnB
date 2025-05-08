@@ -27,7 +27,7 @@ def init_driver(proxy=None, headless=False):
     opts.add_argument(f"--user-agent={ua}")
     opts.add_argument("--disable-blink-features=AutomationControlled")
     opts.add_argument("--disable-web-security")
-    opts.add_argument("--window-position=-2000,0")
+    # opts.add_argument("--window-position=-2000,0")
     opts.add_argument("--disable-dev-shm-usage")
     opts.add_argument("--no-sandbox")
 
