@@ -46,3 +46,6 @@ progress.json
 
 # App folder with antiguos scripts
 app/
+
+# Proxies
+proxies.txt
